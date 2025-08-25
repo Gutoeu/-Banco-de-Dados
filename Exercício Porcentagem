@@ -1,0 +1,32 @@
+set serveroutput on;
+set verify off;
+
+
+accept p_valor prompt 'Digite o valor: '
+accept p_taxa prompt 'Digite a taxa de porcentagem: '
+
+declare
+
+res number;
+
+
+
+
+begin
+
+
+res:= &p_valor*&p_taxa/100;
+
+	dbms_output.put_line('************* CALCULO DA % ********');
+	dbms_output.put_line(&p_taxa|| '% de '||&p_valor|| ' = '||res);
+	res:=&p_valor+(&p_valor*&p_taxa/100);
+	dbms_output.put_line(&p_taxa||'%'||' + '||&p_valor||' = ' ||res); 
+	res:=&p_valor-(&p_valor*&p_taxa/100);
+	dbms_output.put_line(&p_taxa||'%'||' - '||&p_valor||' = ' ||res); 
+	dbms_output.put_line('*********************************');
+
+
+
+
+end;
+/
