@@ -1,0 +1,25 @@
+set serveroutput on;
+set verify off;
+
+accept p_n1 prompt 'Digite o 1o. Numero:'
+accept p_n2 prompt 'Digite o 1o. Numero:'
+
+declare
+p_n1 number;
+p_n2 number;
+res1 number;
+res2 number;
+res3 number;
+res4 number;
+begin
+
+res1:= &p_n1+&p_n2;
+res2:= &p_n1-&p_n2;
+res3:= &p_n1*&p_n2;
+res4:= &p_n1/&p_n2;
+dbms_output.put_line (&p_n1||' + ' ||&p_n2|| ' = ' ||res1);
+dbms_output.put_line (&p_n1||' - ' ||&p_n2|| ' = ' ||res2);
+dbms_output.put_line (&p_n1||' x ' ||&p_n2|| ' = ' ||res3);
+dbms_output.put_line (&p_n1||' / ' ||&p_n2|| ' = ' ||res4);
+end;
+/
