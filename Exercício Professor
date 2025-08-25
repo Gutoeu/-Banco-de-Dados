@@ -1,0 +1,19 @@
+set serveroutput on;
+set verify off; 
+
+accept p_id prompt 'Digite o id do professor: '
+accept p_nome prompt 'Digite o nome do professor:'
+accept p_titu prompt 'Digite a Titulacao do professor:'
+accept p_carg prompt 'Digite a carga horaria:'
+accept p_dici prompt 'Digite a diciplina :'
+
+begin 
+
+insert into professor
+values (&p_id,'&p_nome','&p_titu',&p_carg,'&p_dici');
+dbms_output.put_line('*REGISTRO INSERIDO*');
+
+end;
+/
+
+select * from professor;
